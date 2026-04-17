@@ -16,6 +16,10 @@ import os
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
+# 🔍 DEBUG (ADD THIS)
+st.write("BASE_DIR:", BASE_DIR)
+st.write("FILES:", os.listdir(BASE_DIR))
+
 @st.cache_resource
 def load_resources():
     model = load_model(os.path.join(BASE_DIR, "lstm_model.h5"))
@@ -30,7 +34,13 @@ def load_resources():
 
     return model, tokenizer, max_len, reverse_word_index
 
-model, tokenizer, max_len, reverse_word_index = load_resources()
+
+# ❗ ADD PROPER ERROR HANDLING
+try:
+    model, tokenizer, max_len, reverse_word_index = load_resources()
+except Exception as e:
+    st.error(f"Actual error: {e}")
+    st.stop()
 
 # ------------------------------
 # 3. Prediction & Callback
