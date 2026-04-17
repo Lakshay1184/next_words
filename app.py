@@ -16,9 +16,6 @@ import os
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
-# 🔍 DEBUG (ADD THIS)
-st.write("BASE_DIR:", BASE_DIR)
-st.write("FILES:", os.listdir(BASE_DIR))
 
 @st.cache_resource
 def load_resources():
