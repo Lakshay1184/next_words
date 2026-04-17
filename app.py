@@ -22,7 +22,11 @@ st.write("FILES:", os.listdir(BASE_DIR))
 
 @st.cache_resource
 def load_resources():
-    model = load_model(os.path.join(BASE_DIR, "lstm_model.h5"))
+    model = load_model(
+        os.path.join(BASE_DIR, "lstm_model.h5"),
+        compile=False,
+        safe_mode=False
+    )
 
     with open(os.path.join(BASE_DIR, "tokenizer.pkl"), "rb") as f:
         tokenizer = pickle.load(f)
