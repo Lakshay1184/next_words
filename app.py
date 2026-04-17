@@ -30,11 +30,7 @@ def load_resources():
 
     return model, tokenizer, max_len, reverse_word_index
 
-try:
-    model, tokenizer, max_len, reverse_word_index = load_resources()
-except:
-    st.error("⚠️ Model files not found. Ensure .h5 and .pkl files are in the directory.")
-    st.stop()
+model, tokenizer, max_len, reverse_word_index = load_resources()
 
 # ------------------------------
 # 3. Prediction & Callback
