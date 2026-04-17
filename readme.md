@@ -17,7 +17,7 @@ It provides real-time word suggestions similar to mobile keyboards.
 
 ## 🌐 Live Demo
 
-👉 Add your deployed app link here:
+App link here:
 `https://your-streamlit-app-link`
 
 ---
