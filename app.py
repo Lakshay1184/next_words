@@ -12,15 +12,22 @@ st.set_page_config(page_title="AI Predictor", page_icon="⚡", layout="centered"
 # ------------------------------
 # 2. Load Resources
 # ------------------------------
+import os
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
 @st.cache_resource
 def load_resources():
-    model = load_model("lstm_model.h5")
-    with open("tokenizer.pkl", "rb") as f:
+    model = load_model(os.path.join(BASE_DIR, "lstm_model.h5"))
+
+    with open(os.path.join(BASE_DIR, "tokenizer.pkl"), "rb") as f:
         tokenizer = pickle.load(f)
-    with open("max_len.pkl", "rb") as f:
+
+    with open(os.path.join(BASE_DIR, "max_len.pkl"), "rb") as f:
         max_len = pickle.load(f)
 
     reverse_word_index = {index: word for word, index in tokenizer.word_index.items()}
+
     return model, tokenizer, max_len, reverse_word_index
 
 try:
