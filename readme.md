@@ -18,7 +18,7 @@ It provides real-time word suggestions similar to mobile keyboards.
 ## 🌐 Live Demo
 
 App link here:
-`https://your-streamlit-app-link`
+(https://nextwords2.streamlit.app/)
 
 ---
 
